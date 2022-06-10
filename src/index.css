@@ -1,5 +1,11 @@
 :root{
-
+    --clr-light-background-white:#fff;
+    --clr-light-card-background:rgba(0, 0, 0, 0.08);
+    --clr-dark-mode-background:#1c2022;
+    --clr-dark-card-background:rgb(36, 40, 42);
+    --clr-title:rgb(187, 46, 31);
+    --clr-white:#fff;
+    --clr-black:#000000;
 }
 *{
     margin: 0;

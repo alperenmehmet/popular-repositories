@@ -1,7 +1,11 @@
+import Navbar from './components/Navbar'
+import Header from './components/Header'
+
 const App = () => {
   return (
     <div>
-      <div>hello world</div>
+      <Navbar />
+      <Header />
     </div>
   )
 }
