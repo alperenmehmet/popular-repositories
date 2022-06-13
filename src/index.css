@@ -6,6 +6,8 @@
     --clr-title:rgb(187, 46, 31);
     --clr-white:#fff;
     --clr-black:#000000;
+    --border-radius: 3px;
+    --transition:all 0.3s linear;
 }
 *{
     margin: 0;
@@ -18,3 +20,117 @@ body{
         Cantarell,Helvetica Neue,sans-serif;
     background: white;
 }
+
+img{
+    display: block;
+    width: 100%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.section-center{
+    max-width: 1170px;
+    width: 95vw;
+    margin: 0 auto;
+}
+
+/* <== card container ==> */
+
+.card-container{
+    display: grid;
+    gap:3rem;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* TODO: grid last row will be centered. */
+
+/* <== card ==> */
+.card{
+    background: var(--clr-light-card-background);
+    border-radius: var(--border-radius);
+}
+
+.card-number{
+    padding-top: 1rem;
+    text-align: center;
+    color: var(--clr-title);
+}
+
+.card-img-container{
+    padding: 1rem calc(2rem + 10px);
+}
+
+.card-img-container img{
+    border-radius: var(--border-radius);
+    padding-top: 1rem;
+}
+
+.card-info{
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title-head{
+    text-align: center;
+    padding-top: 0.75rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--clr-title);
+}
+
+.card-title{
+    padding-top: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.card-title a{
+    color: var(--clr-black);
+    margin-left: 10px;
+}
+
+.card-info-user{
+    color:rgb(255, 191, 116);
+    font-size: 1.3rem;
+}
+
+.card-info-star{
+    margin-right: 10px;
+    color: rgb(255, 215, 0);
+    font-size: 1.3rem;
+}
+
+.card-info-branch{
+    margin-right: 10px;
+    color: rgb(129, 195, 245);
+    font-size: 1.3rem;
+}
+
+.card-info-issue{
+    margin-right: 10px;
+    color: rgb(241, 138, 147);;
+}
+
+.card-stars{
+    font-size: 1.2rem;
+    padding-top: 0.4rem;
+}
+
+.card-forks{
+    font-size: 1.2rem;
+    padding-top: 0.4rem;
+}
+
+.card-issues{
+    font-size: 1.2rem;
+    padding-top: 0.4rem;
+    padding-bottom: 2.5rem;
+}
+
