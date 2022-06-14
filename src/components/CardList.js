@@ -5,8 +5,8 @@ const CardList = () => {
   const {repos} = useGlobalContext()
   return (
     <div className="card-container section-center">
-      {repos.map((item) => {
-        return <Card key={item.id} {...item} />
+      {repos.map((item, index) => {
+        return <Card key={item.id} {...item} index={index} />
       })}
     </div>
   )

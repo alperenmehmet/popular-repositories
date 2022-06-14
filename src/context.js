@@ -11,24 +11,26 @@ const AppProvider = ({children}) => {
       .then((res) => res.json())
       .then((result) => {
         const newResult = result.items
-        const newRepos = newResult.map((item) => {
+        const newRepos = newResult.map((item, index) => {
           const {
             id,
             name,
-            html_url,
+            svn_url,
             stargazers_count,
             forks_count,
             open_issues_count,
-            owner: {avatar_url},
+            owner: {avatar_url, login, html_url},
           } = item
           return {
             id,
             name,
-            html_url,
+            svn_url,
             stargazers_count,
             forks_count,
             open_issues_count,
             avatar_url,
+            login,
+            html_url,
           }
         })
         setRepos(newRepos)

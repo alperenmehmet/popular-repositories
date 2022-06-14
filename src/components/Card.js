@@ -4,8 +4,6 @@ import {
   FaCodeBranch,
   FaExclamationTriangle,
 } from 'react-icons/fa'
-import {useGlobalContext} from '../context'
-import {useState} from 'react'
 
 const Card = ({
   name,
@@ -14,28 +12,19 @@ const Card = ({
   forks_count,
   avatar_url,
   open_issues_count,
+  index,
+  svn_url,
+  login,
 }) => {
-  const {repos} = useGlobalContext()
-
-  //TODO: count will be add
-
-  const [count, setCount] = useState(1)
-
-  const handleCount = () => {
-    for (let count = 1; count < repos.length; count++) {
-      return setCount(count + 1)
-    }
-  }
-
   return (
     <div className="card">
       <div className="card-img-container">
-        <h3 className="card-number">#1</h3>
+        <h3 className="card-number">#{index + 1}</h3>
         <img src={avatar_url} alt="avatar" className="card-img" />
       </div>
       <div className="card-info">
-        <a href={html_url} className="card-title-head">
-          {name}
+        <a href={svn_url} className="card-title-head">
+          {login}
         </a>
         <p className="card-title">
           <span>

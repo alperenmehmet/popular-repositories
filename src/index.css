@@ -46,6 +46,7 @@ a{
     display: grid;
     gap:3rem;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
 }
 
 /* TODO: grid last row will be centered. */
@@ -115,7 +116,7 @@ a{
 
 .card-info-issue{
     margin-right: 10px;
-    color: rgb(241, 138, 147);;
+    color: rgb(241, 138, 147);
 }
 
 .card-stars{
@@ -133,4 +134,62 @@ a{
     padding-top: 0.4rem;
     padding-bottom: 2.5rem;
 }
+
+/* <== header ==> */
+
+.header{
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.header-links{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.header-links a {
+    text-transform: capitalize;
+    font-weight: 700;
+    color: black;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.header-links a:hover{
+    color: var(--clr-title);
+}
+
+
+/* <== navbar ==> */
+
+.navbar{
+    margin-top: 3rem;
+}
+
+.navbar-links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.navbar-links a{
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--clr-title);
+    text-transform: capitalize;
+}
+
+.navbar-links i{
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* TODO: active class link will be add for header links */
+
+
+
+
 
