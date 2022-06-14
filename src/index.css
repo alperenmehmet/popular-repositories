@@ -47,6 +47,7 @@ a{
     gap:3rem;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     justify-content: center;
+    margin-bottom: 4rem;
 }
 
 /* TODO: grid last row will be centered. */
@@ -160,6 +161,15 @@ a{
     color: var(--clr-title);
 }
 
+.header-links a:focus {
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--clr-title);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+
 
 /* <== navbar ==> */
 
@@ -194,7 +204,7 @@ a{
     transform: scale(1.2);
 }
 
-/* TODO: active class link will be add for header links */
+
 
 
 

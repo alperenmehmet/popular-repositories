@@ -1,13 +1,14 @@
 import React, {useContext, useEffect, useState} from 'react'
-import {BASE_URL_ALL} from './constants/api'
+import {BASE_URL, URL_PARAMETER} from './constants/api'
 
 const AppContext = React.createContext()
 
 const AppProvider = ({children}) => {
   const [repos, setRepos] = useState([])
+  const [query, setQuery] = useState(null)
 
   useEffect(() => {
-    fetch(BASE_URL_ALL)
+    fetch(`${BASE_URL}${query}${URL_PARAMETER}`)
       .then((res) => res.json())
       .then((result) => {
         const newResult = result.items
@@ -35,9 +36,13 @@ const AppProvider = ({children}) => {
         })
         setRepos(newRepos)
       })
-  }, [])
+  }, [query])
 
-  return <AppContext.Provider value={{repos}}>{children}</AppContext.Provider>
+  return (
+    <AppContext.Provider value={{repos, query, setQuery}}>
+      {children}
+    </AppContext.Provider>
+  )
 }
 
 export const useGlobalContext = () => {

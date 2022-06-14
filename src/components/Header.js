@@ -1,24 +1,49 @@
+import {useGlobalContext} from '../context'
+import {useState} from 'react'
+import {queries} from '@testing-library/react'
+
 const Header = () => {
+  const {setQuery} = useGlobalContext()
+  const [active, setActive] = useState('')
+
+  const catchTheQuery = (e) => {
+    e.preventDefault()
+    setQuery(e.target.innerHTML)
+    console.log(e)
+  }
+
   return (
     <div className="header section-center">
       <ul className="header-links">
         <li>
-          <a href="">all</a>
+          <a href="" onClick={catchTheQuery}>
+            all
+          </a>
         </li>
         <li>
-          <a href="">JavaScript</a>
+          <a href="" onClick={catchTheQuery}>
+            JavaScript
+          </a>
         </li>
         <li>
-          <a href="">ruby</a>
+          <a href="" onClick={catchTheQuery}>
+            ruby
+          </a>
         </li>
         <li>
-          <a href="">java</a>
+          <a href="" onClick={catchTheQuery}>
+            java
+          </a>
         </li>
         <li>
-          <a href="">CSS</a>
+          <a href="" onClick={catchTheQuery}>
+            CSS
+          </a>
         </li>
         <li>
-          <a href="">python</a>
+          <a href="" onClick={catchTheQuery}>
+            python
+          </a>
         </li>
       </ul>
     </div>
