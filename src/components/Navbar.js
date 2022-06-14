@@ -15,7 +15,13 @@ const Navbar = () => {
           <a href="">popular</a>
         </li>
         <li>
-          <i onClick={handleTheme}>{toggle ? <FaSun /> : <FaMoon />}</i>
+          <i onClick={handleTheme}>
+            {toggle ? (
+              <FaSun className="sun-icon" />
+            ) : (
+              <FaMoon className="moon-icon" />
+            )}
+          </i>
         </li>
       </ul>
     </div>

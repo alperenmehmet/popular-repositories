@@ -186,6 +186,13 @@ a{
     font-weight: 700;
     cursor: pointer;
 }
+.sun-icon,.moon-icon{
+    transition: var(--transition);
+}
+
+.sun-icon:hover,.moon-icon:hover{
+    transform: scale(1.2);
+}
 
 /* TODO: active class link will be add for header links */
 
