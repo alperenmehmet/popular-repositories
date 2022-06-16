@@ -1,14 +1,22 @@
 :root{
-    --clr-light-background-white:#fff;
-    --clr-light-card-background:rgba(0, 0, 0, 0.08);
-    --clr-dark-mode-background:#1c2022;
-    --clr-dark-card-background:rgb(36, 40, 42);
-    --clr-title:rgb(187, 46, 31);
-    --clr-white:#fff;
-    --clr-black:#000000;
     --border-radius: 3px;
     --transition:all 0.3s linear;
 }
+
+.dark-theme{
+    --clr-background:#1c2022;
+    --clr-title:rgb(187, 46, 31);
+    --clr-card-background:rgb(36, 40, 42);
+    --clr-text:#fff;
+}
+
+.light-theme{
+    --clr-background:#fff;
+    --clr-title:rgb(187, 46, 31);
+    --clr-card-background:rgba(0, 0, 0, 0.08);
+    --clr-text:#000000;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -18,7 +26,8 @@
 body{
     font-family: -apple-system,BlinkMacSystemFont, Segoe UI,Roboto,Oxygen-Sans,Ubuntu,
         Cantarell,Helvetica Neue,sans-serif;
-    background: white;
+    background: var(--clr-background);
+    transition: var(--transition);
 }
 
 img{
@@ -46,22 +55,25 @@ a{
     display: grid;
     gap:3rem;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    justify-content: center;
     margin-bottom: 4rem;
+    align-content:space-between;
 }
 
 /* TODO: grid last row will be centered. */
 
 /* <== card ==> */
 .card{
-    background: var(--clr-light-card-background);
+    background: var(--clr-card-background);
     border-radius: var(--border-radius);
+    transition: var(--transition);
 }
 
 .card-number{
     padding-top: 1rem;
     text-align: center;
-    color: var(--clr-title);
+    color: var(--clr-text);
+    font-size: 2rem;
+    font-weight: 300;
 }
 
 .card-img-container{
@@ -94,7 +106,7 @@ a{
 }
 
 .card-title a{
-    color: var(--clr-black);
+    color: var(--clr-text);
     margin-left: 10px;
 }
 
@@ -123,17 +135,22 @@ a{
 .card-stars{
     font-size: 1.2rem;
     padding-top: 0.4rem;
+    color: var(--clr-text);
 }
 
 .card-forks{
     font-size: 1.2rem;
     padding-top: 0.4rem;
+    color: var(--clr-text);
+
 }
 
 .card-issues{
     font-size: 1.2rem;
     padding-top: 0.4rem;
     padding-bottom: 2.5rem;
+    color: var(--clr-text);
+
 }
 
 /* <== header ==> */
@@ -152,7 +169,7 @@ a{
 .header-links a {
     text-transform: capitalize;
     font-weight: 700;
-    color: black;
+    color: var(--clr-text);
     font-size: 1.2rem;
     transition: var(--transition);
 }
@@ -182,6 +199,7 @@ a{
     flex-direction: row;
     justify-content: space-between;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .navbar-links a{
@@ -196,6 +214,11 @@ a{
     font-weight: 700;
     cursor: pointer;
 }
+
+.sun-icon{
+    color: rgb(255, 215, 0);
+}
+
 .sun-icon,.moon-icon{
     transition: var(--transition);
 }

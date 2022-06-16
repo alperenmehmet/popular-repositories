@@ -19,7 +19,7 @@ const Card = ({
   return (
     <div className="card">
       <div className="card-img-container">
-        <h3 className="card-number">#{index + 1}</h3>
+        <h4 className="card-number">#{index + 1}</h4>
         <img src={avatar_url} alt="avatar" className="card-img" />
       </div>
       <div className="card-info">
