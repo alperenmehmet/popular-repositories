@@ -4,12 +4,11 @@ import {queries} from '@testing-library/react'
 
 const Header = () => {
   const {setQuery} = useGlobalContext()
-  const [active, setActive] = useState('')
 
   const catchTheQuery = (e) => {
     e.preventDefault()
-    setQuery(e.target.innerHTML)
-    console.log(e)
+    const queryValue = e.target.innerHTML.toLowerCase()
+    setQuery(queryValue)
   }
 
   return (

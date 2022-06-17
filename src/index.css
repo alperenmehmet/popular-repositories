@@ -59,9 +59,8 @@ a{
     align-content:space-between;
 }
 
-/* TODO: grid last row will be centered. */
-
 /* <== card ==> */
+
 .card{
     background: var(--clr-card-background);
     border-radius: var(--border-radius);
@@ -164,6 +163,9 @@ a{
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    max-width: 300px;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .header-links a {
@@ -184,6 +186,12 @@ a{
     color: var(--clr-title);
     font-size: 1.2rem;
     transition: var(--transition);
+}
+
+@media screen and (min-width: 600px){
+    .header-links{
+        max-width: 1170px;
+    }
 }
 
 
@@ -226,6 +234,7 @@ a{
 .sun-icon:hover,.moon-icon:hover{
     transform: scale(1.2);
 }
+
 
 
 
